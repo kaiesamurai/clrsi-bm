@@ -1,0 +1,426 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/Habitude.sol:Habitude": {
+        "src": "contracts/Habitude.sol:4",
+        "version": {
+          "withMetadata": "92cc3ae30b94aac8d2f9943268a66d734c1cbacfdaa68760dc72cf036d00a9fc",
+          "withoutMetadata": "2e909c81586b403408eda6f3fc82bdb88b92c8b0d924cac90baf9eff274bf662",
+          "linkedWithoutMetadata": "2e909c81586b403408eda6f3fc82bdb88b92c8b0d924cac90baf9eff274bf662"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "createHabit(string,uint256,uint256,uint256,uint256)",
+          "createChallenge(string,uint256,uint256,string[])",
+          "joinChallenge(string)",
+          "completeHabit(string)",
+          "completeChallenge(string)",
+          "getChallengeParticipants(string)",
+          "claimPointsForHabit(string)",
+          "claimStakedAmount(string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Habitude",
+            "src": "contracts/Habitude.sol:35"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Habitude",
+              "src": "contracts/Habitude.sol:5"
+            },
+            {
+              "label": "habits",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Habit)14_storage)",
+              "contract": "Habitude",
+              "src": "contracts/Habitude.sol:30"
+            },
+            {
+              "label": "generalHabits",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Habit)14_storage)",
+              "contract": "Habitude",
+              "src": "contracts/Habitude.sol:31"
+            },
+            {
+              "label": "userPoints",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "Habitude",
+              "src": "contracts/Habitude.sol:32"
+            },
+            {
+              "label": "challenges",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Challenge)38_storage)",
+              "contract": "Habitude",
+              "src": "contracts/Habitude.sol:33"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_bool)": {
+              "label": "mapping(string => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_struct(Challenge)38_storage)": {
+              "label": "mapping(string => struct Habitude.Challenge)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_struct(Habit)14_storage)": {
+              "label": "mapping(string => struct Habitude.Habit)",
+              "numberOfBytes": "32"
+            },
+            "t_string_memory_ptr": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Challenge)38_storage": {
+              "label": "struct Habitude.Challenge",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "totalStackAmount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "perPersonStake",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "participants",
+                  "type": "t_mapping(t_address,t_bool)",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "stakes",
+                  "type": "t_mapping(t_address,t_uint256)",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "habitsIncluded",
+                  "type": "t_mapping(t_string_memory_ptr,t_bool)",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "participantsArray",
+                  "type": "t_array(t_address)dyn_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "completed",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "7"
+                }
+              ],
+              "numberOfBytes": "256"
+            },
+            "t_struct(Habit)14_storage": {
+              "label": "struct Habitude.Habit",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "goal",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "target",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "remainder",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "contracts/HabitStakingPlatform.sol:HabitStakingPlatform": {
+        "src": "contracts/HabitStakingPlatform.sol:4",
+        "version": {
+          "withMetadata": "12db31090a1199aa40d41c2868123721f7c072fd937da66538d6e49bbf14e7da",
+          "withoutMetadata": "c9970427059749667cf2445b0ceb7c6a4de552cc7e7e44eb739a26821d34af32",
+          "linkedWithoutMetadata": "c9970427059749667cf2445b0ceb7c6a4de552cc7e7e44eb739a26821d34af32"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "createHabit(string,uint256,uint256,uint256,uint256)",
+          "createChallenge(string,uint256,uint256,string[])",
+          "joinChallenge(string)",
+          "completeHabit(string)",
+          "completeChallenge(string)",
+          "claimPointsForHabit(string)",
+          "claimStakedAmount(string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "HabitStakingPlatform",
+            "src": "contracts/HabitStakingPlatform.sol:29"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "habits",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Habit)12_storage)",
+              "contract": "HabitStakingPlatform",
+              "src": "contracts/HabitStakingPlatform.sol:24"
+            },
+            {
+              "label": "generalHabits",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Habit)12_storage)",
+              "contract": "HabitStakingPlatform",
+              "src": "contracts/HabitStakingPlatform.sol:25"
+            },
+            {
+              "label": "userPoints",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "HabitStakingPlatform",
+              "src": "contracts/HabitStakingPlatform.sol:26"
+            },
+            {
+              "label": "challenges",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Challenge)36_storage)",
+              "contract": "HabitStakingPlatform",
+              "src": "contracts/HabitStakingPlatform.sol:27"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_bool)": {
+              "label": "mapping(string => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_struct(Challenge)36_storage)": {
+              "label": "mapping(string => struct HabitStakingPlatform.Challenge)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_struct(Habit)12_storage)": {
+              "label": "mapping(string => struct HabitStakingPlatform.Habit)",
+              "numberOfBytes": "32"
+            },
+            "t_string_memory_ptr": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Challenge)36_storage": {
+              "label": "struct HabitStakingPlatform.Challenge",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "totalStackAmount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "perPersonStake",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "participants",
+                  "type": "t_mapping(t_address,t_bool)",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "stakes",
+                  "type": "t_mapping(t_address,t_uint256)",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "habitsIncluded",
+                  "type": "t_mapping(t_string_memory_ptr,t_bool)",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "participantsArray",
+                  "type": "t_array(t_address)dyn_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "completed",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "7"
+                }
+              ],
+              "numberOfBytes": "256"
+            },
+            "t_struct(Habit)12_storage": {
+              "label": "struct HabitStakingPlatform.Habit",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "goal",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "target",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "remainder",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    }
+  ]
+}
